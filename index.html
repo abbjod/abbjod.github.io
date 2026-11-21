@@ -1,1 +1,181 @@
-placeholder
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>แอบจด: จดรายจ่ายจากสลิป อ่านในมือถือคุณ</title>
+<meta name="description" content="แอบจด จดรายรับรายจ่ายจากสลิปโอนเงินให้เอง อ่านสลิปในมือถือ ไม่ต้องสมัครบัญชี ไม่มีโฆษณา ใช้ฟรีได้ Pro เดือนละ 29 บาท">
+<meta property="og:title" content="แอบจด: จดรายจ่ายจากสลิป">
+<meta property="og:description" content="โอนเงินตามปกติ รายการขึ้นเอง อ่านในมือถือคุณ ไม่ต้องสมัคร ไม่มีโฆษณา">
+<meta property="og:locale" content="th_TH">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600;700&family=Kanit:wght@500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "แอบจด (ABBJOD)",
+  "alternateName": "ABBJOD",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Android",
+  "inLanguage": "th",
+  "description": "แอปจดรายรับรายจ่ายจากสลิปโอนเงิน อ่านสลิปในมือถือ รายการเงินเก็บในเครื่อง ไม่ต้องสมัครบัญชี ไม่มีโฆษณา",
+  "offers": [
+    {"@type": "Offer", "name": "ฟรี", "price": "0", "priceCurrency": "THB"},
+    {"@type": "Offer", "name": "Pro รายเดือน", "price": "29", "priceCurrency": "THB"},
+    {"@type": "Offer", "name": "Pro รายปี", "price": "290", "priceCurrency": "THB"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "แอบจดเก็บข้อมูลการเงินของฉันไว้ที่ไหน",
+     "acceptedAnswer": {"@type": "Answer", "text": "รายการเงินเก็บในเครื่องของคุณ ไม่ส่งออกไปไหน สลิปอ่านในมือถือและแอปไม่เก็บรูปสลิป ถ้าเปิดใช้หลายเครื่อง ไฟล์จะอยู่ใน Google Drive ของคุณเอง"}},
+    {"@type": "Question", "name": "ต้องสมัครบัญชีไหม",
+     "acceptedAnswer": {"@type": "Answer", "text": "ไม่ต้อง เปิดแอปแล้วใช้ได้เลย เข้าสู่ระบบ Google เฉพาะตอนอยากทดลอง Pro หรือใช้หลายเครื่อง"}},
+    {"@type": "Question", "name": "ฟรีกับ Pro ต่างกันอย่างไร",
+     "acceptedAnswer": {"@type": "Answer", "text": "ฟรี: จดเอง สแกนสลิปเองไม่จำกัด อ่านสลิปอัตโนมัติ 30 ใบต่อเดือน งบ บิล ปุ่มลัด ส่งออก Excel  Pro เดือนละ 29 บาทหรือปีละ 290 บาท: อ่านสลิปอัตโนมัติไม่จำกัด สแกนทั้งอัลบั้ม รับรายการจากแจ้งเตือนธนาคารและบัตร ใช้หลายเครื่อง สำรองอัตโนมัติ"}},
+    {"@type": "Question", "name": "มีโฆษณาไหม",
+     "acceptedAnswer": {"@type": "Answer", "text": "ไม่มีโฆษณา ทั้งรุ่นฟรีและ Pro"}}
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#fbfaf6; --sheet:#ffffff; --rule:#e6e9ef; --margin:#e9b9b4;
+  --ink:#1f2a3a; --muted:#5b6574; --blue:#1d4f91; --blue-soft:#e6eef9;
+  --gold:#a8730c; --gold-soft:#fbf1dc; --line:#d9dee6;
+  --f-display:"Kanit","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#161a21; --sheet:#1d222b; --rule:#232933; --margin:#5a3431;
+  --ink:#e6e9ef; --muted:#a3abb8; --blue:#8db6ee; --blue-soft:#1f2c40;
+  --gold:#e3b04f; --gold-soft:#33291a; --line:#323a46; color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.75;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 33px,var(--rule) 33px 34px)}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+header{padding-block:calc(env(safe-area-inset-top,0px) + 40px) 28px;border-bottom:2px solid var(--margin)}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--f-display);font-weight:600;font-size:22px;color:var(--blue)}
+.coin{width:44px;height:44px;border-radius:50%;background:var(--gold-soft);border:2px solid var(--gold);display:grid;place-items:center}
+.coin svg{width:22px;height:22px}
+h1{font-family:var(--f-display);font-weight:600;font-size:clamp(30px,6vw,46px);line-height:1.25;margin:22px 0 10px;text-wrap:balance}
+h2{font-family:var(--f-display);font-weight:600;font-size:clamp(23px,4vw,29px);line-height:1.3;margin:0 0 10px;color:var(--blue)}
+h3{font-family:var(--f-display);font-weight:500;font-size:19px;margin:0 0 4px}
+p{margin:0 0 12px;max-width:64ch}
+.lead{font-size:19px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;background:var(--blue);color:var(--sheet);text-decoration:none;font-weight:600;min-height:48px}
+.btn.alt{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.note{font-size:14px;color:var(--muted)}
+section{padding-block:40px 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card p{margin:0;font-size:16px}
+table{border-collapse:collapse;width:100%;background:var(--sheet);font-size:16px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper);font-size:14px;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td:nth-child(n+2),th:nth-child(n+2){text-align:center;white-space:nowrap}
+details{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;min-height:32px}
+details p{margin:10px 0 2px}
+.privacy{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 20px}
+ol.steps{padding-left:22px;margin:6px 0 0}
+footer{margin-top:48px;padding-block:24px calc(env(safe-area-inset-bottom,0px) + 32px);border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer a{color:var(--muted)}
+a{color:var(--blue)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="coin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 4l5 5L9 20H4v-5L15 4z"/></svg></span>แอบจด</div>
+    <h1>โอนเงินตามปกติ รายการขึ้นเอง</h1>
+    <p class="lead">แอบจดอ่านสลิปโอนเงินแล้วจดรายจ่ายให้ บอกว่าเดือนนี้ใช้ไปเท่าไหร่ และใช้ได้อีกวันละเท่าไหร่จนเงินเดือนออก อ่านในมือถือคุณ ไม่ต้องสมัครบัญชี ไม่มีโฆษณา</p>
+    <div class="cta">
+      <a class="btn" href="[ลิงก์ Google Play]">ดาวน์โหลดบน Google Play</a>
+      <a class="btn alt" href="#faq">คำถามที่พบบ่อย</a>
+    </div>
+    <p class="note" style="margin-top:12px">ตอนนี้มีบน Android · iPhone กำลังทำ</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>แอบจดทำอะไรได้บ้าง</h2>
+    <div class="grid">
+      <div class="card"><h3>อ่านสลิปให้เอง</h3><p>ยอด วันเวลา ผู้รับ ลงรายการให้ กันรายการซ้ำด้วยเลขอ้างอิงบนสลิป</p></div>
+      <div class="card"><h3>ใช้ได้อีกวันละเท่าไหร่</h3><p>นับรอบเดือนตามวันเงินเดือนออก เช่น วันที่ 25 พร้อมงบรายหมวด</p></div>
+      <div class="card"><h3>เงินร้าน เงินบ้าน ไม่ปนกัน</h3><p>แยกกลุ่มเงินส่วนตัว ร้าน และเงินรอเบิก ส่งออก Excel ได้ฟรี</p></div>
+      <div class="card"><h3>จดเงินสดใน 3 แตะ</h3><p>พิมพ์เป็นประโยค เช่น "กับข้าว 120" แล้วบันทึก</p></div>
+      <div class="card"><h3>ไม่ลืมจ่ายบิล</h3><p>บิลประจำและผ่อนมีงวด เตือนก่อนถึงวันจ่าย 3 วัน</p></div>
+      <div class="card"><h3>ดูยอดจากหน้าจอหลัก</h3><p>ปุ่มลัดหลายแบบ ซ่อนยอดได้ในแตะเดียว ล็อกแอปด้วยรหัสหรือลายนิ้วมือ</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="privacy">
+      <h2>ข้อมูลของคุณอยู่ที่ไหน</h2>
+      <p>รายการเงินเก็บในเครื่องของคุณ ไม่ส่งออกไปไหน สลิปอ่านในมือถือ แอปไม่เก็บรูปสลิป ผู้พัฒนามองไม่เห็นรายการของคุณ</p>
+      <p>บัญชี Google ใช้จำวันเริ่มทดลองเท่านั้น ถ้าเปิดใช้หลายเครื่อง ไฟล์จะอยู่ใน Google Drive ของคุณเอง</p>
+      <p style="margin:0"><a href="[ลิงก์นโยบายความเป็นส่วนตัว]">อ่านนโยบายความเป็นส่วนตัว</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>ฟรีกับ Pro</h2>
+    <p>ใช้ฟรีได้ตลอด ไม่มีโฆษณา Pro สำหรับคนที่อยากให้แอปทำให้เองทั้งหมด</p>
+    <div class="tbl"><table>
+      <thead><tr><th>ฟีเจอร์</th><th>ฟรี</th><th>Pro</th></tr></thead>
+      <tbody>
+        <tr><td>จดเอง สแกนสลิปเองทีละใบ</td><td>ไม่จำกัด</td><td>ไม่จำกัด</td></tr>
+        <tr><td>อ่านสลิปอัตโนมัติ</td><td>30 ใบ/เดือน</td><td>ไม่จำกัด</td></tr>
+        <tr><td>งบ บิลประจำ ปุ่มลัด ล็อกแอป ส่งออก Excel</td><td>มี</td><td>มี</td></tr>
+        <tr><td>กลุ่มเงิน</td><td>ส่วนตัว + 1</td><td>สูงสุด 4</td></tr>
+        <tr><td>สแกนสลิปย้อนหลังทั้งอัลบั้ม</td><td>–</td><td>มี</td></tr>
+        <tr><td>รับรายการจากแจ้งเตือนธนาคารและบัตร</td><td>–</td><td>มี</td></tr>
+        <tr><td>ใช้หลายเครื่อง และสำรองอัตโนมัติไป Google Drive</td><td>–</td><td>มี</td></tr>
+        <tr><td>ราคา</td><td>0 บาท</td><td>29 บาท/เดือน<br>290 บาท/ปี</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:10px">เข้าสู่ระบบ Google เพื่อทดลอง Pro ฟรี 22 วัน ไม่ต้องผูกบัตร หมดทดลองแล้วใช้ฟรีต่อได้ ข้อมูลอยู่ครบ</p>
+  </section>
+
+  <section id="faq">
+    <h2>คำถามที่พบบ่อย</h2>
+    <details><summary>อ่านสลิปธนาคารไหนได้บ้าง</summary><p>[รายชื่อธนาคารและกระเป๋าเงินที่อ่านได้จริง] เราเพิ่มรูปแบบใหม่จากสลิปจริงเท่านั้น ถ้าธนาคารของคุณยังอ่านไม่ได้ ส่งตัวอย่างมาที่อีเมลด้านล่างได้</p></details>
+    <details><summary>ต้องสมัครบัญชีไหม</summary><p>ไม่ต้อง เปิดแอปแล้วใช้ได้เลย เข้าสู่ระบบ Google เฉพาะตอนอยากทดลอง Pro หรือใช้หลายเครื่อง</p></details>
+    <details><summary>ใช้ตอนไม่มีเน็ตได้ไหม</summary><p>จดและอ่านสลิปได้ เพราะทำในเครื่อง ส่วนการใช้หลายเครื่องจะซิงก์เมื่อกลับมาออนไลน์</p></details>
+    <details><summary>มีโฆษณาไหม</summary><p>ไม่มี ทั้งรุ่นฟรีและ Pro</p></details>
+    <details><summary>เปลี่ยนมือถือแล้วข้อมูลหายไหม</summary><p>รุ่นฟรีสำรองเป็นไฟล์แล้วนำเข้าเครื่องใหม่ได้ Pro สำรองไป Google Drive ของคุณให้อัตโนมัติ</p></details>
+    <details><summary>ยกเลิก Pro อย่างไร</summary><p>ยกเลิกได้ใน Google Play &gt; การชำระเงินและการสมัครใช้บริการ หลังยกเลิกยังใช้รุ่นฟรีต่อได้ ข้อมูลอยู่ครบ</p></details>
+    <details><summary>แอบจดเกี่ยวข้องกับธนาคารไหม</summary><p>ไม่เกี่ยวข้องกับธนาคารใด แอบจดเป็นแอปที่ช่วยจดและสรุปรายจ่าย ไม่ใช่คำแนะนำทางการเงิน</p></details>
+  </section>
+
+  <section id="delete">
+    <h2>ลบบัญชีและข้อมูล</h2>
+    <p>รายการเงินอยู่ในเครื่องของคุณ ลบแอปแล้วข้อมูลในเครื่องหายไปด้วย ถ้าเคยเข้าสู่ระบบ Google เราเก็บไว้เพียงรหัสบัญชีและวันเริ่มทดลอง ลบได้ดังนี้</p>
+    <ol class="steps">
+      <li>ในแอป ไปที่ ตั้งค่า &gt; ลบบัญชีและข้อมูล แล้วยืนยัน</li>
+      <li>หรือส่งอีเมลจากบัญชี Google ที่ใช้ มาที่ [อีเมลติดต่อ] หัวข้อ "ขอลบบัญชี" เราจะลบภายใน 30 วัน</li>
+      <li>ไฟล์ซิงก์และไฟล์สำรองใน Google Drive ของคุณ ลบเองได้ที่การตั้งค่า Google Drive &gt; จัดการแอป</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    แอบจด (ABBJOD) · ติดต่อ [อีเมลติดต่อ] · <a href="[ลิงก์นโยบายความเป็นส่วนตัว]">นโยบายความเป็นส่วนตัว</a> · <a href="#delete">ลบบัญชี</a>
+  </div>
+</footer>
+</body>
+</html>
